@@ -5,30 +5,28 @@ import { useState } from 'react';
 import SearchForm  from '../components/SearchForm';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorGrid from '../components/actors/ActorGrid';
+import { useQuery } from '@tanstack/react-query'
 
 const Home = () => {
 
-    const [apiData, setApiData] = useState(null);
-    const [apiDataError, setApiDataError] = useState(null);
+    const [filter, setFilter] = useState(null);
 
-    
+    const { data: apiData, error: apiDataError } = useQuery({
+        queryKey: ['search', filter],
+        queryFn: () =>
+            filter.searchOption === 'shows'
+                ? searchForShows(filter.q)
+                : searchForPeople(filter.q),
+        // ⬇️ disabled as long as the filter is empty
+        enabled: !!filter,
 
-    const onSearch = async (e) => {
-        // e.preventDefault();
-        const { q, searchOption } = e;
-        try {
-            setApiDataError(null);
+        refetchOnWindowFocus: false,
+    })
 
-            let body;
-            if (searchOption === 'shows') {
-             body = await searchForShows(q);
-            } else {
-             body = await searchForPeople(q);
-            }
-            setApiData(body);
-        } catch (error) {
-            setApiDataError(error);
-        }
+     
+    const onSearch = async ({q,searchOption}) => {
+
+        setFilter({q,searchOption})
     };
 
     const renderApiData = () => {
