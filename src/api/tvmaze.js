@@ -15,3 +15,8 @@ export const searchForPeople = async (searchTerm) => {
     const queryString = `/search/people?q=${searchTerm}`;
     return await apiGet(queryString);
 }
+
+export const getShowDetails = async (showId) => {
+    const queryString = `/shows/${showId}`;
+    return await apiGet(queryString);
+}

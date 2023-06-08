@@ -1,11 +1,41 @@
+import { useEffect ,useState } from "react";
 import { useParams } from "react-router-dom";
+import { getShowDetails } from "../api/tvmaze";
 
 const Show = () => {
+    const { showId } = useParams();
+    const [show, setShow] = useState(null);
+    const [showError, setShowError] = useState(null);
 
-    const {showId} = useParams();
+
+
+    useEffect(() => {
+        // console.log('Component did mount');
+        async function fetchData() {
+            try {
+                const data = await getShowDetails(showId);
+                setShow(data);
+            } catch (error) {
+                setShowError(error);
+            }
+        }
+
+        fetchData();
+    }, [showId]);
+
+    if (showError) {
+        return <div> Error occured: {showError.message} </div>
+    }
+
+    if (show) {
+        // console.log(show);
+        return <div> got show: {show.name} </div>
+    }
+
     return (
         <div>
-            This is Show Page for Show Id: {showId}
+            {/* This is Show Page for Show Id: {showId} */}
+            data is loading
         </div>
     )
 }
