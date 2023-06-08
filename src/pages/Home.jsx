@@ -3,6 +3,8 @@
 import { searchForShows, searchForPeople } from './../api/tvmaze'
 import { useState } from 'react';
 import SearchForm  from '../components/SearchForm';
+import ShowGrid from '../components/shows/ShowGrid';
+import ActorGrid from '../components/actors/ActorGrid';
 
 const Home = () => {
 
@@ -34,13 +36,14 @@ const Home = () => {
             return <div> {apiDataError.message} </div>
         }
 
+        if (apiData?.length === 0) {
+            return <div> No results </div>
+        }
+
         if (apiData) {
-            return apiData[0].show ? apiData.map((show) => {
-                return <div key={show.show.id}> {show.show.name} </div>
-            }) : apiData.map((person) => {
-                return <div key={person.person.id}> {person.person.name} </div>
-            }
-            )
+            return apiData[0].show ? 
+                <div> <ShowGrid shows={ apiData} /> </div>:
+                <div> <ActorGrid actors={ apiData} /> </div>
         }
 
         return null;
