@@ -17,6 +17,6 @@ export const searchForPeople = async (searchTerm) => {
 }
 
 export const getShowDetails = async (showId) => {
-    const queryString = `/shows/${showId}`;
+    const queryString = `/shows/${showId}?embed[]=seasons&embed[]=cast`;
     return await apiGet(queryString);
 }
