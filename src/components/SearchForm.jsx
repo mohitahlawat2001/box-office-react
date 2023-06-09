@@ -1,9 +1,11 @@
 import { useState , useEffect } from "react";
+import { useSearchStr } from "../lib/useSearchStr";
+
 
 const SearchForm = ( { onSearch }) => {
 
     
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useSearchStr();
     const [searchOption, setSearchOption] = useState("shows");
 
     useEffect(() => {
