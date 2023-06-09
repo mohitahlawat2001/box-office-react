@@ -20,3 +20,8 @@ export const getShowDetails = async (showId) => {
     const queryString = `/shows/${showId}?embed[]=seasons&embed[]=cast`;
     return await apiGet(queryString);
 }
+
+export const getShowsByIds = async (showIds) => {
+    const promises = showIds.map(showId => apiGet(`/shows/${showId}`));
+    return await Promise.all(promises);
+}
