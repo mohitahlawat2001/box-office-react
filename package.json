@@ -2,8 +2,10 @@
   "name": "box-office",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mohitahlawat2001.github.io/box-office-react",
   "dependencies": {
     "@tanstack/react-query": "^4.29.12",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
@@ -27,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { SearchCard, SearchImgWrapper } from '../common/SearchCard';
@@ -34,9 +35,9 @@ const ShowCard = ({ name, image, id, summary, onStarMeClick , isStarred}) => {
       <p>{summaryStripped}</p>
 
       <ActionSection>
-        {/* <Link to={`/show/${id}`}> Read more</Link> */}
+        <Link to={`/show/${id}`} target="_blank" rel="noreferrer">{' '} Read more</Link>
 
-        <a href={`/show/${id}`} target="_blank" rel="noreferrer">{' '}Read more</a>
+        {/* <a href={`/show/${id}`} target="_blank" rel="noreferrer">{' '}Read more</a> */}
         <StarBtn
           ref={ref}
           type="button"
