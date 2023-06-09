@@ -1,5 +1,5 @@
 // import { useEffect ,useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , Link } from "react-router-dom";
 import { getShowDetails } from "../api/tvmaze";
 import { useQuery } from '@tanstack/react-query'
 import ShowMainData from "../components/shows/ShowMainData";
@@ -15,6 +15,11 @@ const Show = () => {
         { enabled: !!showId }
     );
 
+    // const navigate = useNavigate();
+    // const onGoBack = () => {
+    //     navigate('/'); // go back to home page
+    // }
+
     if (showError) {
         return <div> Error occured: {showError.message} </div>
     }
@@ -23,6 +28,9 @@ const Show = () => {
         // return <div> got show: {show.name} </div>
 
         return <div>
+
+            <Link to='/'> Go Back To home</Link>
+            {/* <button type="button" onClick={onGoBack}> Go Back To home</button> */}
             <ShowMainData
                 image={show.image}
                 name={show.name}
