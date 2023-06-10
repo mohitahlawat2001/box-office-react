@@ -6,7 +6,7 @@ import { StarIcon } from '../common/Starlcon';
 
 const ShowCard = ({ name, image, id, summary, onStarMeClick , isStarred}) => {
   const summaryStripped = summary
-    ? summary.split('').slice(0, 10).join('').replace(/<.+?>/g, '') + '...'
+    ? summary.split('').slice(0, 100).join('').replace(/<.+?>/g, '') + '...'
     : 'No summary available';
 
   const ref = useRef();
