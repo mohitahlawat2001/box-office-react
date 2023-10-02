@@ -105,6 +105,9 @@ const SearchButtonWrapper = styled.div`
     border-radius: 12px;
     &:hover {
       cursor: pointer;
+      background-color: darkblue;
+      transform : scale(1.05);
+      transition: all 0.2s;
     }
   }
 `;
