@@ -28,19 +28,37 @@ const ShowCard = ({ name, image, id, summary, onStarMeClick, isStarred }) => {
 
   return (
     <SearchCard>
-      <Link to={`/show/${id}`} target="_blank" rel="noreferrer">
+      <Link
+        to={`/show/${id}`}
+        target="_blank"
+        rel="noreferrer"
+        style={{ 'text-decoration': 'none' }}
+      >
         <SearchImgWrapper>
           <img src={image} alt={name} />
         </SearchImgWrapper>
 
-        <h1> {name}</h1>
+        <h1 style={{ color: 'black', 'border-radius': '1rem' }}> {name}</h1>
 
-        <p>{summaryStripped}</p>
+        <p style={{ color: 'black', 'border-radius': '1rem' }}>
+          {summaryStripped}
+        </p>
       </Link>
       <ActionSection>
-        <Link to={`/show/${id}`} target="_blank" rel="noreferrer">
+        <Link
+          to={`/show/${id}`}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            'text-decoration': 'none',
+            padding: '0.5rem 1rem',
+            'background-color': '#2400ff',
+            color: 'white',
+            'border-radius': '1rem',
+          }}
+        >
           {' '}
-          Read more
+          Read More
         </Link>
 
         {/* <a href={`/show/${id}`} target="_blank" rel="noreferrer">{' '}Read more</a> */}
