@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StarIcon } from '../common/Starlcon';
+import { StarIcon } from '../common/StarIcon';
 import NotFound from '../../lib/not-found.png'
 
 const ShowMainData = ({ image, name, summary, rating, genres }) => {
@@ -19,7 +19,7 @@ const ShowMainData = ({ image, name, summary, rating, genres }) => {
                 </Headline>
                 <Summary dangerouslySetInnerHTML={{ __html: summary }} />
                 <div>
-                    Generes:
+                    Genres:
                     <Genres>
                         {
                             genres.map(

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { SearchCard, SearchImgWrapper } from '../common/SearchCard';
-import { StarIcon } from '../common/Starlcon';
+import { StarIcon } from '../common/StarIcon';
 
 const ShowCard = ({ name, image, id, summary, onStarMeClick, isStarred }) => {
   const summaryStripped = summary
