@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { SearchCard, SearchImgWrapper } from '../common/SearchCard';
 import { StarIcon } from '../common/Starlcon';
 
-const ShowCard = ({ name, image, id, summary, onStarMeClick , isStarred}) => {
+const ShowCard = ({ name, image, id, summary, onStarMeClick, isStarred }) => {
   const summaryStripped = summary
     ? summary.split('').slice(0, 100).join('').replace(/<.+?>/g, '') + '...'
     : 'No summary available';
@@ -28,32 +28,32 @@ const ShowCard = ({ name, image, id, summary, onStarMeClick , isStarred}) => {
 
   return (
     <SearchCard>
-      <SearchImgWrapper>
-        <img src={image} alt={name} />
-      </SearchImgWrapper>
-      <h1> {name}</h1>
-      <p>{summaryStripped}</p>
+      <Link to={`/show/${id}`} target="_blank" rel="noreferrer">
+        <SearchImgWrapper>
+          <img src={image} alt={name} />
+        </SearchImgWrapper>
 
+        <h1> {name}</h1>
+
+        <p>{summaryStripped}</p>
+      </Link>
       <ActionSection>
-        <Link to={`/show/${id}`} target="_blank" rel="noreferrer">{' '} Read more</Link>
+        <Link to={`/show/${id}`} target="_blank" rel="noreferrer">
+          {' '}
+          Read more
+        </Link>
 
         {/* <a href={`/show/${id}`} target="_blank" rel="noreferrer">{' '}Read more</a> */}
-        <StarBtn
-          ref={ref}
-          type="button"
-          onClick={HandleStarClick}
-          
-        >
+        <StarBtn ref={ref} type="button" onClick={HandleStarClick}>
           <StarIcon active={isStarred} />
-            {/* {isStarred ? 'Unstar' : 'Star'} */}
-              </StarBtn>
+          {/* {isStarred ? 'Unstar' : 'Star'} */}
+        </StarBtn>
       </ActionSection>
     </SearchCard>
   );
 };
 
 export default ShowCard;
-
 
 const ActionSection = styled.div`
   margin-top: 15px;
