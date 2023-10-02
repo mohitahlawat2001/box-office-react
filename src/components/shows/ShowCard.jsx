@@ -58,7 +58,7 @@ const ShowCard = ({ name, image, id, summary, onStarMeClick, isStarred }) => {
           }}
         >
           {' '}
-          Read more
+          Read More
         </Link>
 
         {/* <a href={`/show/${id}`} target="_blank" rel="noreferrer">{' '}Read more</a> */}
