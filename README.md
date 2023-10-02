@@ -30,4 +30,4 @@ Box Office React is a comprehensive web series and movie database that also incl
 
 ## License
 
-[MIT Licensed](https://github.com/Kritika30032002/To-Do-List-Application/blob/main/LICENSE)
+[MIT Licensed](https://github.com/mohitahlawat2001/box-office-react/blob/master/LICENSE.md)
