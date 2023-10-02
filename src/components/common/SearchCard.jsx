@@ -24,7 +24,7 @@ export const SearchCard = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem;
-  
+
   h1 {
     margin: 10px 0;
     font-size: 21px;
