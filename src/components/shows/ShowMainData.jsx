@@ -1,38 +1,38 @@
 import styled from 'styled-components';
 import { StarIcon } from '../common/Starlcon';
-import NotFound from '../../lib/not-found.png'
+import NotFound from '../../lib/not-found.png';
 
 const ShowMainData = ({ image, name, summary, rating, genres }) => {
-    
-    return (
-        <MainDataWrapper>
-            <div className="img-wrap">
-                <img src={image ? image.original : NotFound} alt={name} />
-            </div>
-            <DataSection>
-                <Headline>
-                    {name}
-                    <div>
-                        <StarIcon active /> 
-                    <span>{rating.average || 'N/A'}</span>
-                    </div>
-                </Headline>
-                <Summary dangerouslySetInnerHTML={{ __html: summary }} />
-                <div>
-                    Generes:
-                    <Genres>
-                        {
-                            genres.map(
-                                genre => <span key={genre}>{genre}</span>
-                            )
-                        }
-                    </Genres>
-                </div>
-            </DataSection>
-        </MainDataWrapper>
-    );
 
-}
+	return (
+		<MainDataWrapper>
+			<div className="img-wrap">
+				<img src={image ? image.original : NotFound} alt={name} />
+			</div>
+			<DataSection>
+				<Headline>
+					{name}
+					<div>
+						<StarIcon active />
+						<span>{rating.average || 'N/A'}</span>
+					</div>
+				</Headline>
+				<Summary dangerouslySetInnerHTML={{ __html: summary }} />
+				<div>
+					Genres:
+					<Genres>
+						{
+							genres.map(
+								genre => <span key={genre}>{genre}</span>
+							)
+						}
+					</Genres>
+				</div>
+			</DataSection>
+		</MainDataWrapper>
+	);
+
+};
 
 export default ShowMainData;
 
