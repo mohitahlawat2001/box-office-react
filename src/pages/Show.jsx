@@ -7,6 +7,7 @@ import Season from "../components/shows/Season";
 import Cast from "../components/shows/Cast";
 import styled from 'styled-components';
 import { TextCenter } from "../components/common/TextCenter";
+import Loader from "../components/loader/Loader";
   
 const Show = () => {
     const { showId } = useParams();
@@ -70,7 +71,7 @@ const Show = () => {
     return (
         <TextCenter>
             {/* This is Show Page for Show Id: {showId} */}
-            data is loading
+            <Loader />
         </TextCenter>
     )
 }
