@@ -24,7 +24,8 @@ export const SearchCard = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem;
-
+  z-index: 1;
+  
   h1 {
     margin: 10px 0;
     font-size: 21px;
@@ -32,5 +33,12 @@ export const SearchCard = styled.div`
   p {
     margin-top: 0;
     margin-bottom: 5px;
+  }
+  
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    z-index: 2;
+    transition: all 0.4s ease-in-out;
   }
 `;
