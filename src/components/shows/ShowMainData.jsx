@@ -19,7 +19,7 @@ const ShowMainData = ({ image, name, summary, rating, genres }) => {
                 </Headline>
                 <Summary dangerouslySetInnerHTML={{ __html: summary }} />
                 <div>
-                    Generes:
+                    Genres:
                     <Genres>
                         {
                             genres.map(
